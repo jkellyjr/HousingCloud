@@ -10,7 +10,7 @@ try {
         number: "c300",
         bedNumber: 2,
         type: enums.ROOM_TYPE.VALUES.SINGLE,
-        pupose: enums.ROOM_PURPOSE.VALUES.HONORS
+        purpose: enums.ROOM_PURPOSE.VALUES.HONORS
     });
 
     db.User.upsert({

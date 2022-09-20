@@ -4,11 +4,12 @@ const { Sequelize, DataTypes } = require("sequelize");
 const configs = require("../configs");
 
 const sequelize = new Sequelize({
-    database: configs.DB.NAME, 
-    username: configs.DB.USER, 
-    password: configs.DB.PASSWORD,
-    host: configs.DB.HOST,
-    dialect: configs.DB.DIALECT
+    database: configs.DB.database, 
+    username: configs.DB.username, 
+    password: configs.DB.password,
+    host: configs.DB.host,
+    dialect: configs.DB.dialect,
+    logging: false
 
     /**
      * TODO: Add connection pool info

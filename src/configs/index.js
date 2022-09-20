@@ -6,12 +6,13 @@ const APP = {
 }
 
 const DB = {
-    HOST: process.env.MYSQL_HOST,
-    USER: process.env.MYSQL_USER,
-    PASSWORD: process.env.MYSQL_PASSWORD,
-    NAME: process.env.MYSQL_DB_NAME,
-    DIALECT: "mysql",
-    MAX_STARTUP_CONNECTION_RETRIES: 25
+    host: process.env.MYSQL_HOST,
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DB_NAME,
+    dialect: "mysql",
+    max_startup_connection_retries: 25,
+    logging: false
 }
 
 module.exports = {

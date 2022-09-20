@@ -98,7 +98,7 @@ try {
 
     db.TicketComment.upsert({
         ticketId: "faketicketIdStudent",
-        text: "please help im drowning",
+        text: "please help",
         author: "fakeId"
     });
 
@@ -110,7 +110,7 @@ try {
 
     db.TicketComment.upsert({
         ticketId: "faketicketIdStudent",
-        text: "(internal) hope he can swim",
+        text: "(internal) idk if we can help",
         author: "fakeId2",
         visibility: enums.TICKET_COMMENT_VISIBILITY.VALUES.INTERNAL
     });

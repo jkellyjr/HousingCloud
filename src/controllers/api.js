@@ -2,7 +2,6 @@
 
 const express = require("express");
 const auth = require("../services/authorization");
-// const db = require("../models");
 const ticketController = require("../controllers/api/ticket");
 const ticketCommentController = require("../controllers/api/ticket-comment");
 
@@ -24,10 +23,4 @@ router.delete("/reports/tickets/:ticketId?", ticketController.delete);
 
 router.post("/reports/ticketComments", ticketCommentController.post);
 
-
-/**
- * TODO: 
- * 1.) Create API methods to expose enum values
- * 2.) Create API method to expose available locations
- */
 module.exports = router;

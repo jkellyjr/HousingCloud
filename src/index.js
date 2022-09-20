@@ -25,6 +25,9 @@ app.use("/api/v1", apiRoutes);
  */
 const db = require("./models");
 
+/**
+ * Feel free to comment out
+ */
 require("./scripts/add-db-test-data");
 
 app.listen(configs.APP.PORT, () => {

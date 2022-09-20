@@ -8,12 +8,6 @@ async function userAuthorization (req, res, next) {
 
     if (req.headers.authorization) {
 
-        /** 
-         * TODO:
-         * 1.) Add try catch
-         * 2.) Add cache
-         */
-
         const reqToken = req.headers.authorization.replace("Bearer ", "");
 
         const authRecord = await db.Authorization.findByPk(reqToken, {

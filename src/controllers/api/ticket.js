@@ -89,14 +89,21 @@ controller.get = async (req, res) => {
     /**
      * Valid arguments: ASC/DESC
      */
-    if (Object.keys(req.query).includes("prioritySort") && req.user.role != enums.USER_TYPES.VALUES.STUDENT) {
-        const sortVal = await enums.TICKET_API.PRIORITY_SORT.translate(req.query.prioritySort);
-        if (sortVal) {
-            params.prioritySort = sortVal; 
+    if (Object.keys(req.query).includes("prioritySort")) {
+
+        if (req.user.role == enums.USER_TYPES.VALUES.STUDENT) {
+            statusCode = apiMessages.INVALID_AUTH.STATUS_CODE;
+            resObject = apiMessages.INVALID_AUTH.PAYLOAD;
         }
         else {
-            statusCode = apiMessages.INVALID_PARAM_OPTIONS.STATUS_CODE;
-            resObject = await apiMessages.INVALID_PARAM_OPTIONS.getPayload("prioritySort", req.query.prioritySort, Object.keys(enums.TICKET_API.PRIORITY_SORT.VALUES));
+            const sortVal = await enums.TICKET_API.PRIORITY_SORT.translate(req.query.prioritySort);
+            if (sortVal) {
+                params.prioritySort = sortVal; 
+            }
+            else {
+                statusCode = apiMessages.INVALID_PARAM_OPTIONS.STATUS_CODE;
+                resObject = await apiMessages.INVALID_PARAM_OPTIONS.getPayload("prioritySort", req.query.prioritySort, Object.keys(enums.TICKET_API.PRIORITY_SORT.VALUES));
+            }
         }
     }   
 

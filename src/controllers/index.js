@@ -10,19 +10,6 @@ router.get("/", (req, res) => {
 const db = require("../models");
 
 router.get("/ping", async (req, res) => {
-    
-    const r = await db.Ticket.findAll({
-        include: db.TicketComment,
-            
-        order: [
-                [db.TicketComment, "createdAt", "ASC"]
-            ]
-
-    });
-
-    console.log(`\n${JSON.stringify(r)}\n`);
-
-
     res.statusCode = 200;
     res.send({ok: "true"});
 });

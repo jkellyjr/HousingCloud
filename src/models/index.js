@@ -10,10 +10,6 @@ const sequelize = new Sequelize({
     host: configs.DB.host,
     dialect: configs.DB.dialect,
     logging: false
-
-    /**
-     * TODO: Add connection pool info
-     */
 });
 
 let db = {}
